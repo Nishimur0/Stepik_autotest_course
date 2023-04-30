@@ -6,6 +6,9 @@ from selenium.common.exceptions import ElementClickInterceptedException
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 
+login = input('веди логин от stepik')
+password = input('введи пароль от stepik')
+
 browser = webdriver.Chrome()
 link = 'https://parsinger.ru/scroll/2/index.html'
 result = 0
@@ -31,10 +34,10 @@ try:
     log.click()
     ent_login = browser.find_element(By.ID, 'id_login_email')
     ent_login.click()
-    ent_login.send_keys('v.rychkov@yclients.tech')
+    ent_login.send_keys(login)
     ent_pass = browser.find_element(By.ID, 'id_login_password')
     ent_pass.click()
-    ent_pass.send_keys('Mandazavr1431')
+    ent_pass.send_keys(password)
     entire = browser.find_element(By.CSS_SELECTOR, "[type='submit']")
     entire.click()
     time.sleep(3)

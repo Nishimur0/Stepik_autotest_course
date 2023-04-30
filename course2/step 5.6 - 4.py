@@ -4,6 +4,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
+login = input('веди логин от stepik')
+password = input('введи пароль от stepik')
+
 browser = webdriver.Chrome()
 link = 'https://parsinger.ru/methods/5/index.html'
 
@@ -30,10 +33,10 @@ try:
     log.click()
     ent_login = browser.find_element(By.ID, 'id_login_email')
     ent_login.click()
-    ent_login.send_keys('v.rychkov@yclients.tech')
+    ent_login.send_keys(login)
     ent_pass = browser.find_element(By.ID, 'id_login_password')
     ent_pass.click()
-    ent_pass.send_keys('Mandazavr1431')
+    ent_pass.send_keys(password)
     entire = browser.find_element(By.CSS_SELECTOR, "[type='submit']")
     entire.click()
     time.sleep(3)
